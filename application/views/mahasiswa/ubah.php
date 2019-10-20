@@ -5,43 +5,46 @@
 
 				<div class="card">
 				  <div class="card-header">
-				    Form Tambah Data Mahasiswa
+				    Form Ubah Data Mahasiswa
 				  </div>
 				  <div class="card-body">
 				  
 					</div>
 					<form action="" method="post">
+						<input type="hidden" name="id" value="<?= $mahasiswa['id'];?>">
 						<div class="form-group">
 						    <label for="nama" >Nama</label>
-						    <input type="text" class="form-control" id="nama" name="nama">
+						    <input type="text" class="form-control" id="nama" name="nama" value="<?= $mahasiswa['nama'] ?>">
 						    <small  class="form-text text-danger"><?= form_error('nama') ?>.</small>
   	
 					    </div>
 
 					    <div class="form-group">
 						    <label for="nrp">NRP</label>
-						    <input type="text" class="form-control" id="nrp"name="nrp" >
+						    <input type="text" class="form-control" id="nrp"name="nrp" value="<?= $mahasiswa['nrp'] ?>">
 						     <small  class="form-text text-danger"><?= form_error('nrp') ?>.</small>
 						</div>
 
  						<div class="form-group">
 						    <label for="email">Email</label>
-						    <input type="text" class="form-control" id="email" name="email">
+						    <input type="text" class="form-control" id="email" name="email" value="<?= $mahasiswa['email'] ?>">
 						     <small  class="form-text text-danger"><?= form_error('email') ?>.</small>
 						</div>
 
 						<div class="form-group">
 						    <label for="jurusan">Jurusan</label>
-						    <select class="form-control" id="jurusan"name="jurusan">
-						      <option value="Teknik Informatika">Teknik Informatika</option>
-						      <option value="Teknik Pangan">Teknik Pangan</option>
-						      <option value="Teknik Mesin">Teknik Mesin</option>
-						      <option value="Teknik Planologi">Teknik Planologi</option>
-						      <option value="Teknik Lingkungan">Teknik Lingkungan</option>
-						      <option value="Teknik Industri">Teknik Industri</option>
+						    <select class="form-control" id="jurusan"name="jurusan" >
+						    	<?php foreach($jurusan as $j ) :  ?>
+						    		<?php if( $j == $mahasiswa['jurusan'] ) : ?>
+						    			<option value="<?= $j; ?>" selected><?= $j; ?></option>
+						    			<?php else : ?>
+						      <option value="<?= $j; ?>"selected><?= $j; ?></option>
+						      <?php endif; ?>
+						     
+						 <?php endforeach; ?>
 						    </select>
 						</div>
-						<button type="submit" name="tambah" class="btn btn-primary float-right">Tambah Data</button>
+						<button type="submit" name="Ubah" class="btn btn-primary float-right">Ubah Data</button>
 					</form>
 				  </div>
 				</div>
