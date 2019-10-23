@@ -44,6 +44,7 @@
 						 <?php endforeach; ?>
 						    </select>
 						</div>
+						 
 						<button type="submit" name="Ubah" class="btn btn-primary float-right">Ubah Data</button>
 					</form>
 				  </div>
